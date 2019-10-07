@@ -1,0 +1,26 @@
+@import "./variables.scss";
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper-nav {
+  margin: 10px 10px 0px 10px;
+}
+
+.wrapper-filtro {
+  flex: 5;
+}
+
+//height: calc(100vh - #{$breadcrumb-height});
+.page-view {
+  height: 100vh;
+  width: 100vw;
+  background-color: $background-color;
+}
