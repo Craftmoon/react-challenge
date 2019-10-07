@@ -1,0 +1,14 @@
+@import "../../variables.scss";
+
+.breadcrumbTrail {
+  color: #737689;
+  height: $breadcrumb-height;
+  width: 92vw;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #c3c3c3;
+}
+
+.breadcrumb {
+  margin: 0px 40px;
+}
