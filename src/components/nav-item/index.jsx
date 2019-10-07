@@ -16,7 +16,7 @@ const NavItem = ({ icon, label, path }) => {
                 clientes: <ClientesIcon />
               }[icon]
             }
-            <span>{label}</span>
+            <span className={styles.navItemText}>{label}</span>
           </div>
         </NavLink>
       </div>

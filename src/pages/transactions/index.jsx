@@ -22,8 +22,10 @@ const TransactionsPage = () => {
     }
   });
 
+  const servicesMinusExpenses = servicesValue - expensesValue;
+
   return (
-    <div className="container">
+    <React.Fragment>
       <div className="row">
         <div className="col">
           <FilterButton text="HOJE" />
@@ -32,25 +34,31 @@ const TransactionsPage = () => {
           <FilterButton text="OUTRO PERÍODO" />
         </div>
       </div>
-      <div className="row text-center">
-        <div className="col">
-          <ValueBillboard label="VALOR TOTAL" valuePrefix="R$" value={100} />
+      <div className="container">
+        <div className="row text-center">
+          <div className="col">
+            <ValueBillboard
+              label="VALOR TOTAL"
+              valuePrefix="R$"
+              value={servicesMinusExpenses}
+            />
+          </div>
+        </div>
+        <hr />
+        <div className="row">
+          <div className="col">
+            <DonutChart data={data} />
+          </div>
+          <div className="col">
+            <ServicesExpensesBarChart
+              servicesValue={servicesValue}
+              expensesValue={expensesValue}
+              totalValue={ServicesExpensesTotalValue}
+            />
+          </div>
         </div>
       </div>
-      <hr />
-      <div className="row">
-        <div className="col">
-          <DonutChart data={data} />
-        </div>
-        <div className="col">
-          <ServicesExpensesBarChart
-            servicesValue={servicesValue}
-            expensesValue={expensesValue}
-            totalValue={ServicesExpensesTotalValue}
-          />
-        </div>
-      </div>
-    </div>
+    </React.Fragment>
   );
 };
 

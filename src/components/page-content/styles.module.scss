@@ -1,0 +1,16 @@
+.wrapperNav {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 10px 0px 10px;
+}
+
+@media (max-width: 1208px) {
+  .wrapperNav {
+    flex-direction: column;
+  }
+}
+
+.wrapperFiltro {
+  padding: 20px 10px 0px 20px;
+  width: 100%;
+}

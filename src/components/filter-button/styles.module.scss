@@ -1,4 +1,4 @@
-.filterOn {
+.filterOff {
   font-family: "din condensed bold";
   color: #fff;
   font-size: 16px;
@@ -7,9 +7,10 @@
   border: none;
   margin: 5px;
   padding: 5px 20px;
+  opacity: 0.5;
 }
 
-.filterOff {
+.filterOn {
   compose: filterOn;
-  opacity: 0.5;
+  opacity: 1;
 }

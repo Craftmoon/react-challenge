@@ -5,8 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 
 const Nav = () => {
   const navItems = [
-    { icon: "totais", label: "Totais", path: "/transactions" },
-    { icon: "clientes", label: "Clientes", path: "/customers" }
+    { icon: "totais", label: "TOTAIS", path: "/transactions" },
+    { icon: "clientes", label: "CLIENTES", path: "/customers" }
   ];
 
   return (

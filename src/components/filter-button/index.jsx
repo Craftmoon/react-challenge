@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 
 const FilterButton = ({ text, onClick }) => {
   return (
-    <button className={styles.filterOn} onClick={() => onClick()}>
+    <button className={styles.filterOff} onClick={() => onClick()}>
       {text}
     </button>
   );

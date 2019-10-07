@@ -9,9 +9,9 @@ const PageContent = () => {
   return (
     <div>
       <BrowserRouter>
-        <div className="flex-row wrapper-nav">
+        <div className={styles.wrapperNav}>
           <Nav />
-          <div className="wrapper-filtro">
+          <div className={styles.wrapperFiltro}>
             <Route exact path="/customers" component={CustomerPage} />
             <Route exact path="/transactions" component={TransactionsPage} />
           </div>
