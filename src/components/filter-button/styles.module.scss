@@ -1,0 +1,15 @@
+.filterOn {
+  font-family: "din condensed bold";
+  color: #fff;
+  font-size: 16px;
+  background-color: #09d0a3;
+  border-radius: 19px;
+  border: none;
+  margin: 5px;
+  padding: 5px 20px;
+}
+
+.filterOff {
+  compose: filterOn;
+  opacity: 0.5;
+}
