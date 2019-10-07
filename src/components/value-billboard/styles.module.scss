@@ -1,0 +1,29 @@
+.billboardContainer {
+  margin: 20px;
+}
+
+.billboardLabel {
+  font-family: "din condensed bold";
+  color: #737689;
+  font-size: 25px;
+}
+
+.billboardText {
+  font-family: "avenir medium";
+  color: #09d0a3;
+}
+
+.billboardValue {
+  composes: billboardText;
+  font-size: 70px;
+}
+
+.billboardValuePrefix {
+  composes: billboardText;
+  font-size: 35px;
+  padding-top: 15px;
+}
+
+.valuesWrapper {
+  display: inline-flex;
+}
