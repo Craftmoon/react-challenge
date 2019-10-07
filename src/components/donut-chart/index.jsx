@@ -4,12 +4,9 @@ import { connect } from "react-redux";
 import styles from "./styles.module.scss";
 import Text from "../text";
 import NumberFormat from "react-number-format";
+import { getPercentage } from "../../utils/getPercentage";
 
 const DonutChart = ({ data }) => {
-  const getPercentage = (value, total) => {
-    return Math.round((value * 100) / total);
-  };
-
   const transactions = data.filter(
     transaction => transaction.type === "Receitas"
   );

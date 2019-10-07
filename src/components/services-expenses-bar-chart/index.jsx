@@ -2,16 +2,13 @@ import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import { connect } from "react-redux";
 import styles from "./styles.module.scss";
+import { getPercentage } from "../../utils/getPercentage";
 
 const ServicesExpensesBarChart = ({
   servicesValue,
   expensesValue,
   totalValue
 }) => {
-  const getPercentage = (value, total) => {
-    return Math.round((value * 100) / total);
-  };
-
   const values = {
     options: {
       colors: ["#56daa8", "#ef5761"],
