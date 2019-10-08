@@ -4,19 +4,24 @@ import { ReactComponent as ClientesIcon } from "../../assets/ico/ic_clientes.svg
 import { ReactComponent as TotaisIcon } from "../../assets/ico/ic_totais.svg";
 import { NavLink } from "react-router-dom";
 
-const NavItem = ({ icon, label, path }) => {
+const NavItem = ({ icon, label, path, selected }) => {
+  console.log(selected);
   return (
     <div className="row">
       <div className="col">
         <NavLink to={path}>
-          <div className={styles.navItem}>
+          <div
+            className={
+              selected ? styles.selectedNavItem : styles.unselectedNavItem
+            }
+          >
             {
               {
                 totais: <TotaisIcon />,
                 clientes: <ClientesIcon />
               }[icon]
             }
-            <span className={styles.navItemText}>{label}</span>
+            <span> {label}</span>
           </div>
         </NavLink>
       </div>

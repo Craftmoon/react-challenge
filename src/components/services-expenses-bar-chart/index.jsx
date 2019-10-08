@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import Chart from "react-apexcharts";
-import { connect } from "react-redux";
 import styles from "./styles.module.scss";
 import { getPercentage } from "../../utils/getPercentage";
+import Text from "../text";
 
 const ServicesExpensesBarChart = ({
   servicesValue,
@@ -15,7 +15,7 @@ const ServicesExpensesBarChart = ({
       plotOptions: {
         bar: {
           horizontal: false,
-          columnWidth: "60%",
+          columnWidth: "100%",
           endingShape: "rounded"
         }
       },
@@ -44,7 +44,7 @@ const ServicesExpensesBarChart = ({
               "</span>"
           ];
         },
-        offsetX: 0,
+        offsetX: 30,
         offsetY: 0,
         labels: {
           colors: undefined,
@@ -112,17 +112,22 @@ const ServicesExpensesBarChart = ({
   };
 
   return (
-    <div className="app">
-      <div className="row">
-        <div className="mixed-chart">
-          <Chart
-            options={values.options}
-            series={values.series}
-            type="bar"
-            width="500"
-          />
-        </div>
-      </div>
+    <div className={styles.barChartContainer}>
+      <Text
+        font="din condensed bold"
+        fontSize={25}
+        color="#737689"
+        textClass={styles.totalText}
+      >
+        DESPESAS X RECEITAS
+      </Text>
+      <Chart
+        options={values.options}
+        series={values.series}
+        type="bar"
+        width="380"
+        height="380"
+      />
     </div>
   );
 };
