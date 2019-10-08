@@ -1,12 +1,9 @@
-.navItem {
+.unselectedNavItem {
   display: inline-flex;
   align-items: center;
   margin: 20px 0px 10px 20px;
   cursor: pointer;
   width: max-content;
-}
-
-.navItemText {
   font-family: "avenir heavy";
   color: #737689;
   font-size: 14px;
@@ -15,6 +12,12 @@
 }
 
 .selectedNavItem {
-  composes: navItemText;
+  composes: unselectedNavItem;
   opacity: 1;
+}
+
+@media (max-width: 1000px) {
+  .unselectedNavItem {
+    margin: 20px 0px;
+  }
 }

@@ -9,6 +9,13 @@
   border-bottom: 1px solid #c3c3c3;
 }
 
+@media (max-width: 1000px) {
+  .breadcrumbTrail {
+    height: 45px;
+    min-height: 45px;
+  }
+}
+
 .breadcrumb {
   margin: 0px 40px;
 }

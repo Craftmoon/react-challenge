@@ -5,3 +5,23 @@
   flex-direction: column;
   align-items: center;
 }
+
+@media (max-width: 1000px) {
+  .menuContainer {
+    display: none;
+  }
+  .menuOpener {
+    display: block !important;
+  }
+}
+
+.menuOpener {
+  display: none;
+  position: absolute;
+  top: 8px;
+  left: 5px;
+}
+
+.smallMenu {
+  cursor: pointer;
+}

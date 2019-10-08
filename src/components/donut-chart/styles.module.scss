@@ -5,11 +5,14 @@
 }
 
 .totalContainer {
-  width: 320px;
-  margin-left: 35px;
+  width: 251px;
+  margin-left: 65px;
 }
 
 .totalText {
   display: flex;
-  justify-content: space-between;
+  -webkit-justify-content: center;
+}
+.donutChartContainer {
+  margin-top: 40px;
 }

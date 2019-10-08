@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
-import { connect } from "react-redux";
 import styles from "./styles.module.scss";
 import Text from "../text";
 import NumberFormat from "react-number-format";
@@ -53,11 +52,11 @@ const DonutChart = ({ data }) => {
         horizontalAlign: "left",
         fontSize: "10px",
         fontFamily: "Avenir Roman",
-        width: 330,
+        width: 270,
         height: 160,
         formatter: function(seriesName, opts) {
           return [
-            "<span style='display:flex;justify-content:space-between;width:260px;'> <span>" +
+            "<span style='display:flex;justify-content:space-between;width:250px;'> <span>" +
               seriesName +
               "</span>" +
               "<span> <strong> R$ " +
@@ -72,7 +71,7 @@ const DonutChart = ({ data }) => {
               "</span>"
           ];
         },
-        offsetX: 0,
+        offsetX: 30,
         offsetY: 0,
         labels: {
           colors: undefined,
@@ -99,7 +98,15 @@ const DonutChart = ({ data }) => {
   };
 
   return (
-    <div className="donut">
+    <div className={styles.donutChartContainer}>
+      <Text
+        font="din condensed bold"
+        fontSize={25}
+        color="#737689"
+        textClass={styles.totalText}
+      >
+        SERVIÇOS
+      </Text>
       <Chart
         options={values.chartOptions}
         series={values.series}
