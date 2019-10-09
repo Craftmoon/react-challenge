@@ -23,7 +23,7 @@ const INITIAL_STATE = [
     type: "Receitas",
     product_id: 26,
     product_name: "Banho & Tosa",
-    time: "2019-10-05"
+    time: "2019-10-09"
   },
   {
     id: 4514,
@@ -39,7 +39,7 @@ const INITIAL_STATE = [
     type: "Receitas",
     product_id: 26,
     product_name: "Banho & Tosa",
-    time: "2019-10-11"
+    time: "2019-10-01"
   },
   {
     id: 4516,
