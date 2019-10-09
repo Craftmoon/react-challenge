@@ -12,7 +12,14 @@
 .totalText {
   display: flex;
   -webkit-justify-content: center;
+  justify-content: space-between;
 }
+
+.title {
+  display: flex;
+  -webkit-justify-content: center;
+}
+
 .donutChartContainer {
   margin-top: 40px;
 }

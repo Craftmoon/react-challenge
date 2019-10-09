@@ -14,7 +14,9 @@ const DonutChart = ({ data }) => {
   ];
 
   const productNames = [
-    ...new Set(transactions.map(transaction => transaction.product_name))
+    ...new Set(
+      transactions.map(transaction => transaction.product_name.toUpperCase())
+    )
   ];
 
   const total = transactions.reduce(function(prevVal, elem) {
@@ -103,7 +105,7 @@ const DonutChart = ({ data }) => {
         font="din condensed bold"
         fontSize={25}
         color="#737689"
-        textClass={styles.totalText}
+        textClass={styles.title}
       >
         SERVIÇOS
       </Text>

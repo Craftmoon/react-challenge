@@ -23,7 +23,7 @@ const INITIAL_STATE = [
     type: "Receitas",
     product_id: 26,
     product_name: "Banho & Tosa",
-    time: "2019-10-09"
+    time: "2019-10-05"
   },
   {
     id: 4514,
@@ -175,12 +175,12 @@ const INITIAL_STATE = [
     product_id: 29,
     type: "Despesas",
     product_name: "Folha de pagamento",
-    time: "2019-06-10"
+    time: "2019-09-30"
   }
 ];
 
-const filter = (state = INITIAL_STATE, action) => [
-  state.filter(transaction => {
+const filter = (state = INITIAL_STATE, action) =>
+  INITIAL_STATE.filter(transaction => {
     // console.log(
     //   splitAtSpace(action.payload.dateRangeStart),
     //   splitAtSpace(transaction.time)
@@ -199,13 +199,11 @@ const filter = (state = INITIAL_STATE, action) => [
     // );
 
     if (
-      moment(action.payload.dateRangeStart).isSameOrAfter(transaction.time) &&
-      moment(action.payload.dateRangeFinish).isSameOrBefore(transaction.time)
+      moment(action.payload.dateRangeStart).isSameOrBefore(transaction.time) &&
+      moment(action.payload.dateRangeFinish).isSameOrAfter(transaction.time)
     )
-      console.log("deu certo");
-    return transaction;
-  })
-];
+      return transaction;
+  });
 
 export default createReducer(INITIAL_STATE, {
   [Types.FILTER_DATE]: filter

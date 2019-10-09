@@ -1,8 +1,6 @@
-@import "../../variables.scss";
-
 .breadcrumbTrail {
   color: #737689;
-  height: $breadcrumb-height;
+  min-height: 65px;
   width: 100%;
   display: flex;
   align-items: center;

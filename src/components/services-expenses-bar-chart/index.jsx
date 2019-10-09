@@ -11,6 +11,11 @@ const ServicesExpensesBarChart = ({
 }) => {
   const values = {
     options: {
+      chart: {
+        toolbar: {
+          show: false
+        }
+      },
       colors: ["#56daa8", "#ef5761"],
       plotOptions: {
         bar: {

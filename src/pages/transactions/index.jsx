@@ -9,6 +9,9 @@ import moment from "moment";
 
 const TransactionsPage = () => {
   const data = useSelector(state => state.transactions);
+
+  console.log(data);
+
   const dispatch = useDispatch();
 
   let ServicesExpensesTotalValue = 0,
