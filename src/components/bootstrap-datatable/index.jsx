@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit";
-import { connect } from "react-redux";
 import { ReactComponent as SearchIcon } from "../../assets/ico/ic_search.svg";
 
 import styles from "./styles.module.scss";

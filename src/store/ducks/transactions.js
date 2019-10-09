@@ -181,23 +181,6 @@ const INITIAL_STATE = [
 
 const filter = (state = INITIAL_STATE, action) =>
   INITIAL_STATE.filter(transaction => {
-    // console.log(
-    //   splitAtSpace(action.payload.dateRangeStart),
-    //   splitAtSpace(transaction.time)
-    // );
-    // console.log(
-    //   splitAtSpace(action.payload.dateRangeFinish),
-    //   splitAtSpace(transaction.time)
-    // );
-    // console.log(
-    //   moment(splitAtSpace(action.payload.dateRangeStart)).isSameOrAfter(
-    //     splitAtSpace(transaction.time)
-    //   ) &&
-    //     moment(splitAtSpace(action.payload.dateRangeFinish)).isSameOrBefore(
-    //       splitAtSpace(transaction.time)
-    //     )
-    // );
-
     if (
       moment(action.payload.dateRangeStart).isSameOrBefore(transaction.time) &&
       moment(action.payload.dateRangeFinish).isSameOrAfter(transaction.time)

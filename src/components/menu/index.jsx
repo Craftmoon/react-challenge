@@ -1,16 +1,9 @@
 import React, { useState } from "react";
 import styles from "./styles.module.scss";
-import { useSelector, useDispatch } from "react-redux";
 import MenuItem from "../menu-item";
 import { ReactComponent as MenuIcon } from "../../assets/ico/ic_menu.svg";
 
 const Menu = () => {
-  const [menuStatus, setMenuStatus] = useState();
-
-  const handleSmallMenuClick = () => {
-    console.log("abriu ou fechou");
-  };
-
   return (
     <React.Fragment>
       <div className={styles.menuContainer}>
@@ -19,7 +12,7 @@ const Menu = () => {
         <MenuItem icon="cadastro" label="Cadastro" />
       </div>
       <div className={styles.menuOpener}>
-        <MenuIcon onClick={handleSmallMenuClick} className={styles.smallMenu} />
+        <MenuIcon className={styles.smallMenu} />
       </div>
     </React.Fragment>
   );

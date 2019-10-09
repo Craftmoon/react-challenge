@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import BootstrapDatatable from "../../components/bootstrap-datatable";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const CustomerPage = () => {
   const data = useSelector(state => state.customers);

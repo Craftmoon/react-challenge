@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Chart from "react-apexcharts";
 import styles from "./styles.module.scss";
 import Text from "../text";
