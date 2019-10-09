@@ -1,5 +1,6 @@
 .filterButtonRow {
   width: 480px;
+  display: inline;
 }
 
 .chartsContainer {
@@ -11,4 +12,8 @@
   .chartsContainer {
     display: grid;
   }
+}
+
+.datepickerHidden {
+  display: none !important;
 }

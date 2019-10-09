@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ServicesExpensesBarChart from "../../components/services-expenses-bar-chart";
 import DonutChart from "../../components/donut-chart";
 import styles from "./styles.module.scss";
@@ -6,11 +6,10 @@ import FilterButton from "../../components/filter-button";
 import ValueBillboard from "../../components/value-billboard";
 import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
+import DateRangePicker from "@wojtekmaj/react-daterange-picker";
 
 const TransactionsPage = () => {
   const data = useSelector(state => state.transactions);
-
-  console.log(data);
 
   const dispatch = useDispatch();
 
@@ -27,10 +26,10 @@ const TransactionsPage = () => {
     }
   });
 
+  let dateRangeStart, dateRangeFinish;
+
   const handleFilter = dateSpan => {
     const today = moment().format("YYYY-MM-DD");
-
-    let dateRangeStart, dateRangeFinish;
 
     if (dateSpan === "day") {
       dateRangeStart = today;
@@ -41,8 +40,6 @@ const TransactionsPage = () => {
         .format("YYYY-MM-DD");
 
       dateRangeFinish = today;
-
-      moment().format("DD-MM-YYYY");
     } else if (dateSpan === "month") {
       dateRangeStart = moment()
         .subtract(1, "months")
@@ -50,12 +47,6 @@ const TransactionsPage = () => {
 
       dateRangeFinish = today;
     }
-
-    console.log(
-      " dateRangeStart dateRangeFinish",
-      dateRangeStart,
-      dateRangeFinish
-    );
 
     //dispatch the filter function
     dispatch({
@@ -66,6 +57,22 @@ const TransactionsPage = () => {
       }
     });
   };
+
+  let dateStartEnd = [new Date(), new Date()];
+
+  const handleDatePickerChange = date => {
+    dateStartEnd = [
+      moment(date[0]).format("YYYY-MM-DD"),
+      moment(date[1]).format("YYYY-MM-DD")
+    ];
+
+    dateRangeStart = dateStartEnd[0];
+    dateRangeFinish = dateStartEnd[1];
+
+    handleFilter("custom");
+  };
+
+  const [datepickerShowing, setDatepickerShowing] = useState(false);
 
   const servicesMinusExpenses = servicesValue - expensesValue;
 
@@ -90,7 +97,18 @@ const TransactionsPage = () => {
             handleFilter("month");
           }}
         />
-        <FilterButton text="OUTRO PERÍODO" />
+        <FilterButton
+          text="OUTRO PERÍODO"
+          onClick={() => {
+            setDatepickerShowing(datepickerShowing ? false : true);
+          }}
+        />
+        <DateRangePicker
+          onChange={handleDatePickerChange}
+          value={dateStartEnd}
+          className={datepickerShowing ? "" : styles.datepickerHidden}
+          clearIcon={null}
+        />
       </div>
       <div className="container-fluid">
         <div className="row text-center">
